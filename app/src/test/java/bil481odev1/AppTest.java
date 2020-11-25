@@ -39,4 +39,34 @@ class AppTest {
       assertFalse(App.search(null, 1));
     }
 
+
+    @Test
+    public void testNotEqual() {
+      ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+      assertFalse(App.myFunction(array, 5, 10));
+    }
+    @Test
+    public void testEqual() {
+      ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+      assertTrue(App.myFunction(array, 5, 6));
+    }
+    @Test
+    public void testArrayEmpty() {
+      ArrayList<Integer> array = new ArrayList<>();
+      assertFalse(App.myFunction(array, 1, 1));
+    }
+    @Test
+    public void testArrayNull() {
+      assertFalse(App.myFunction(null, 1, 11));
+    }
+    @Test
+    public void testNegativeEqual() {
+      ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+      assertTrue(App.myFunction(array, -1, 0));
+    }
+    @Test
+    public void testNegativeNotEqual() {
+      ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+      assertFalse(App.myFunction(array, -1, -1));
+    }
 }
