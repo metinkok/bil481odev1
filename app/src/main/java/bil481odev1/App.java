@@ -38,6 +38,8 @@ public class App {
         return false;
       }
     public static boolean myFunction(ArrayList<Integer> array, int i, int j){
+      if((array==null)||(array.size()==0))
+        return false;
       for(int k=0; k<array.size(); k++){
         int sum=array.get(k)+i;
         if(sum==j)
