@@ -37,6 +37,14 @@ public class App {
         }
         return false;
       }
+    public static boolean myFunction(ArrayList<Integer> array, int i, int j){
+      for(int k=0; k<array.size(); k++){
+        int sum=array.get(k)+i;
+        if(sum==j)
+          return true;
+      }
+      return false;
+    }
 
     public String getGreeting() {
         return "Hello World!";
@@ -66,10 +74,13 @@ public class App {
           System.out.println(inputList);
 
 
-          String input2 = req.queryParams("input2").replaceAll("\\s","");
+          String input2 = req.queryParams("input2");
           int input2AsInt = Integer.parseInt(input2);
 
-          boolean result = App.search(inputList, input2AsInt);
+          String input3 = req.queryParams("input3").replaceAll("\\s","");
+          int input3AsInt = Integer.parseInt(input3);
+
+          boolean result = App.myFunction(inputList, input2AsInt, input3AsInt);
 
           Map<String, Boolean> map = new HashMap<String, Boolean>();
           map.put("result", result);
